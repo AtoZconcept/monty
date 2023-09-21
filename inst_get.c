@@ -29,6 +29,5 @@ void instruct_get(void)
 			return;
 		}
 	}
-
 	invalid_instruct();
 }

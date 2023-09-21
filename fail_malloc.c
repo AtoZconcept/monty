@@ -7,6 +7,6 @@
 void fail_malloc(void)
 {
 	dprintf(2, "Error: malloc failed\n");
-	/*free_args();*/
+	free_args();
 	exit(EXIT_FAILURE);
 }

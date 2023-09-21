@@ -60,11 +60,13 @@ typedef struct arg_stream
 } arg_tream;
 
 extern arg_tream *arguments;
+
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+FILE *fdopen(int fd, const char *mode);
+int dprintf(int fd, const char *format, ...);
+
 int main(int argc, char **argv);
 void check_arg(int argc);
-int dprintf(int fd, const char *format, ...);
-FILE *fdopen(int fd, const char *mode);
 void init_args();
 void fail_malloc(void);
 void streamget_fail(char *file);

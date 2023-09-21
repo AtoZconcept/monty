@@ -7,7 +7,7 @@
 void streamget_fail(char *file)
 {
 	dprintf(2, "Error: Can't open file %s\n", file);
-/*	free_args();*/
+	free_args();
 	exit(EXIT_FAILURE);
 }
 
