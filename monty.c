@@ -20,8 +20,15 @@ int main(int argc, char **argv)
 
 	while (getline(&arguments->line, &n, arguments->stream) != -1)
 	{
-		printf("%s", arguments->line);
+		arguments->line_num += 1;
+		token_line();
+		instruct_get();
+		instruct_run();
+		free_token();
 	}
+
+	stream_clos();
+	free_args();
 
 	return (0);
 }

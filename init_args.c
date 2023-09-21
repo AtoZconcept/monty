@@ -10,6 +10,12 @@ void init_args()
 	if (arguments == NULL)
 		fail_malloc();
 
+	arguments->instruction = malloc(sizeof(instruct_t));
+	if (arguments->instruction == NULL)
+		fail_malloc();
+
 	arguments->stream = NULL;
 	arguments->line = NULL;
+	arguments->num_tokens = 0;
+	arguments->line_num = 0;
 }

@@ -49,6 +49,10 @@ typedef struct arg_stream
 {
 	FILE *stream;
 	char *line;
+	unsigned int line_num;
+	char **tokens;
+	int num_tokens;
+	instruct_t *instruction;
 } arg_tream;
 
 extern arg_tream *arguments;
@@ -59,6 +63,8 @@ void init_args();
 void fail_malloc(void);
 void streamget_fail(char *file);
 void streamget(char *file);
+void token_line(void);
+void instruct_get(void);
 void free_args();
 
 #endif /* MONTY_H */
