@@ -15,7 +15,7 @@ void _div(stack_t **stack, unsigned int line_number)
     temp4 = arguments->head;
     temp5 = temp4->next;
 
-    if (tepm4->n == 0)
+    if (temp4->n == 0)
     {
         dprintf(2, "L%d: division by zero\n", line_number);
         all_free();
