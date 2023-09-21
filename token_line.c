@@ -16,13 +16,13 @@ void token_line(void)
 		token = strtok(NULL, delim);
 	}
 
-	arguments->tokens = malloc(sizeof(char *) *
+	arguments->tokens = malloc(sizeof(char *) * 
 			(arguments->num_tokens + 1));
 	strcpy(linecpy, arguments->line);
 	token = strtok(linecpy, delim);
 	while (token)
 	{
-		arguments->tokens[i] = malloc(sizeof(char) *
+		arguments->tokens[i] = malloc(sizeof(char) * 
 				(strlen(token) + 1));
 		if (arguments->tokens[i] == NULL)
 			fail_malloc();

@@ -3,14 +3,14 @@
 void instruct_get(void)
 {
 	int i;
-	instruction_t instruction[] = {
+	instruction_t instructions[] = {
 		{"push", &push}, {"pop", &pop},
 		{"pint", &pint}, {"swap", &swap},
 		{"nop", &nop}, {"add", &add},
 		{"pall", &pall}, {"sub", &sub},
-		{"mul", &mul}, {"div", &_div},
-		{"stack", &stack}, {"queue", &queue},
+		{"div", &_div}, {"mul", &mul},
 		{"rotl", &rotl}, {"rotr", &rotr},
+		{"stack", &stack}, {"queue", &queue},
 		{"pstr", &pstr}, {"pchar", &pchar},
 		{"mod", &mod},
 		{NULL, NULL}
@@ -21,13 +21,14 @@ void instruct_get(void)
 
 	for (; instructions[i].opcode != NULL; i++)
 	{
-		if (strcmp(instructions[i].opcode, argument->tokens[0])
+		if (strcmp(instructions[i].opcode, arguments->tokens[0]) 
 				== 0)
 		{
-			argument->instruction->opcode = instructions[i].opcode;
-			argument->instruction->f = instructions[i].f;
+			arguments->instruction->opcode = instructions[i].opcode;
+			arguments->instruction->f = instructions[i].f;
 			return;
 		}
 	}
+
 	invalid_instruct();
 }

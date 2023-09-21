@@ -50,10 +50,13 @@ typedef struct arg_stream
 {
 	FILE *stream;
 	char *line;
-	unsigned int line_num;
+	unsigned int line_number;
 	char **tokens;
 	int num_tokens;
 	instruction_t *instruction;
+	stack_t *head;
+	int stack_length;
+	int stack;
 } arg_tream;
 
 extern arg_tream *arguments;
@@ -68,9 +71,13 @@ void token_line(void);
 void invalid_instruct(void);
 void instruct_get(void);
 void instruct_run(void);
+int number(char *str);
 void token_free(void);
 void stream_clos(void);
 void free_args();
+void head_fre(void);
+void stack_fre(stack_t *head);
+void all_free(void);
 
 /*associate fuction prototype*/
 void push(stack_t **stack, unsigned int line_number);

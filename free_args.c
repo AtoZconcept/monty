@@ -15,7 +15,7 @@ void free_args()
 		arguments->instruction = NULL;
 	}
 
-	free_head();
+	head_fre();
 
 	if (arguments->line)
 	{
