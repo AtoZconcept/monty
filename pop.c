@@ -11,5 +11,5 @@ void pop(stack_t **stack, unsigned int line_number)
     }
 
     del_stack();
-    arguments->stack_length == 1;
+    arguments->stack_length -= 1;
 }
