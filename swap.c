@@ -10,11 +10,14 @@ void swap(stack_t **stack, unsigned int line_number)
         all_free();
         exit(EXIT_FAILURE);
     }
+
     temp4 = arguments->head;
     temp5 = temp4->next;
     temp4->next = temp5->next;
+
     if (temp4->next)
         temp4->next->prev = temp4;
+
     temp5->next = temp4;
     temp4->prev = temp5;
     temp5->prev = NULL;

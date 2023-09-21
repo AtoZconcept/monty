@@ -10,3 +10,12 @@ void fail_malloc(void)
 	free_args();
 	exit(EXIT_FAILURE);
 }
+
+
+void invalid_instruct(void)
+{
+	dprintf(2, "L%d: unknown instruction %s\n", 
+			arguments->line_number, arguments->tokens[0]);
+	all_free();
+	exit(EXIT_FAILURE);
+}

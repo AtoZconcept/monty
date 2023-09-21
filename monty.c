@@ -26,7 +26,6 @@ int main(int argc, char **argv)
 		instruct_run();
 		token_free();
 	}
-
 	stream_clos();
 	free_args();
 

@@ -12,7 +12,6 @@ void token_free(void)
 		free(arguments->tokens[i]);
 		i++;
 	}
-
 	free(arguments->tokens);
 	arguments->tokens = NULL;
 }
