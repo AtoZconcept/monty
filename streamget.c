@@ -6,8 +6,8 @@
 */
 void streamget_fail(char *file)
 {
-	dprint(stderr, "Error: Can't open file %s\n", file);
-	free_args();
+	dprintf(2, "Error: Can't open file %s\n", file);
+/*	free_args();*/
 	exit(EXIT_FAILURE);
 }
 
@@ -17,16 +17,16 @@ void streamget_fail(char *file)
 */
 void streamget(char *file)
 {
-	int file_d;
+	int fd;
 
-	file_d = open(file, O_RDONLY);
-	if (file_d == -1)
+	fd = open(file, O_RDONLY);
+	if (fd == -1)
 		streamget_fail(file);
 	
-	arguments->stream = fdopen(file_d, "r");
+	arguments->stream = fdopen(fd, "r");
 	if (arguments->stream == NULL)
 	{
-		close(file_d);
+		close(fd);
 		streamget_fail(file);
 	}
 }

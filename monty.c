@@ -1,6 +1,7 @@
 #include "monty.h"
 
 arg_tream *arguments = NULL;
+
 /**
  * main - Entering the interpreter
  * @argc: Argument count
@@ -9,7 +10,7 @@ arg_tream *arguments = NULL;
  * Return: returns 0 (Success)
  */
 
-int main(int argc, int **argv)
+int main(int argc, char **argv)
 {
 	size_t n = 0;
 
