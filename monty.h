@@ -1,12 +1,12 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-#define _GNU_SOURCE
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stddef.h>
 
 
 /**
@@ -60,9 +60,11 @@ typedef struct arg_stream
 } arg_tream;
 
 extern arg_tream *arguments;
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 int main(int argc, char **argv);
 void check_arg(int argc);
 int dprintf(int fd, const char *format, ...);
+FILE *fdopen(int fd, const char *mode);
 void init_args();
 void fail_malloc(void);
 void streamget_fail(char *file);
