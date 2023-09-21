@@ -23,4 +23,7 @@ void stack_fre(stack_t *head)
 
 void all_free(void)
 {
-
+	stream_clos();
+	token_free();
+	free_args();
+}
