@@ -3,6 +3,7 @@
 
 #define _GNU_SOURCE
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -52,7 +53,7 @@ typedef struct arg_stream
 	unsigned int line_num;
 	char **tokens;
 	int num_tokens;
-	instruct_t *instruction;
+	instruction_t *instruction;
 } arg_tream;
 
 extern arg_tream *arguments;
@@ -64,7 +65,30 @@ void fail_malloc(void);
 void streamget_fail(char *file);
 void streamget(char *file);
 void token_line(void);
+void invalid_instruct(void);
 void instruct_get(void);
+void instruct_run(void);
+void token_free(void);
+void stream_clos(void);
 void free_args();
+
+/*associate fuction prototype*/
+void push(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
+void stack(stack_t **stack, unsigned int line_number);
+void queue(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */

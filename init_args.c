@@ -10,7 +10,7 @@ void init_args()
 	if (arguments == NULL)
 		fail_malloc();
 
-	arguments->instruction = malloc(sizeof(instruct_t));
+	arguments->instruction = malloc(sizeof(instruction_t));
 	if (arguments->instruction == NULL)
 		fail_malloc();
 

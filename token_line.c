@@ -12,7 +12,7 @@ void token_line(void)
 	token = strtok(linecpy, delim);
 	while (token)
 	{
-		arguments->num_token += 1;
+		arguments->num_tokens += 1;
 		token = strtok(NULL, delim);
 	}
 
